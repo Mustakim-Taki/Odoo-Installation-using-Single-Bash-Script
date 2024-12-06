@@ -136,9 +136,9 @@ echo "Configuration file created at /opt/Odoo/conf/$conf"
 echo "Creating Odoo systemd service"
 
 
-environment="VIRTUAL_ENV=/opt/Odoo/venv/odoo-16-env"
+environment="VIRTUAL_ENV=/opt/Odoo/venv/$env_name"
 environment2="PATH=$VIRTUAL_ENV/bin:$PATH"
-environment3="PYTHONPATH=/opt/Odoo/venv/odoo-16-env/lib/python3.12/site-packages"
+environment3="PYTHONPATH=/opt/Odoo/venv/$env_name/lib/python3.12/site-packages"
 
 sudo bash -c "cat > /etc/systemd/system/$service <<EOF
 [Service]
